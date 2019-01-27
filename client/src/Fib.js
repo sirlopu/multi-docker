@@ -40,8 +40,16 @@ class Fib extends Component {
         this.setState({ index: '' });
     };
 
+    // renderSeenIndexes() {
+    //     return this.state.seenIndexes.map(({ number }) => number).join(', ');
+    // }
+
     renderSeenIndexes() {
-        return this.state.seenIndexes.map(({ number }) => number).join(', ');
+        if (this.state.seenIndexes.length > 0 && Array.isArray(this.state.seenIndexes)) {
+            console.log('this.state.seenIndexes', this.state.seenIndexes);
+            return this.state.seenIndexes.map(({ number }) => number).join(', ');
+        }
+        return null;
     }
 
     renderValues() {
